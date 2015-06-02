@@ -2,21 +2,22 @@ section .text
 	global ft_memchr
 
 ft_memchr:
-
-.while:
-	cmp [rdi], byte 0
+	mov r13, rdx
 	je .end
-	cmp rdx, 0
-	je .end
-	cmp [rdi], rsi
+	mov rcx, rdx
+	mov rax, rsi
+	cld
+	repne scasb
+	dec rdi
+	cmp rdi, rsi
 	je .return
-	inc rdi
-	dec rdx
+	cmp rcx, 0
+	je .end
 
 .return:
 	mov rax, rdi
 	ret
 
 .end:
-	move rax, 0
+	mov rax, 0
 	ret

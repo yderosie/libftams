@@ -6,7 +6,7 @@
 /*   By: yderosie <yderosie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 12:38:17 by yderosie          #+#    #+#             */
-/*   Updated: 2015/06/01 17:15:30 by yderosie         ###   ########.fr       */
+/*   Updated: 2015/06/02 18:08:22 by yderosie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,18 @@ int main(void)
 	fd = open("Makefile", O_RDONLY);
 	ft_cat(fd);
 	close(fd);
+	char mchr[]= "Hello world";
+	printf("%s\n", ft_memchr(mchr, 'e', 9));
+	printf("%s\n", memchr(mchr, 'e', 9));
+//	printf("ft_putchar :[%d]\n", ft_putchar('t'));
+	ft_putstr("test1234\n");
+	printf("%s\n", ft_strchr(mchr, 'd'));
+	printf("%s\n", strchr(mchr ,'d'));
+	printf("strclr:\n");
+	char clr[]="test";
+	ft_strclr(clr);
+	printf("%s\n", clr);
+	printf("strnew:\n");
+	printf("%s\n", ft_strncpy(ft_memalloc(16), "Hello world!", 5));
 	return (0);
 }

@@ -17,6 +17,13 @@ SRCS =	src/ft_bzero.s	\
 		src/ft_cat.s	\
 		src/ft_memchr.s	\
 		src/ft_strnew.s	\
+		src/ft_strclr.s	\
+		src/ft_putchar.s\
+		src/ft_strchr.s	\
+		src/ft_putstr.s	\
+		src/ft_strcpy.s	\
+		src/ft_strncpy.s\
+		src/ft_memalloc.s\
 
 INCLUDES = include/
 

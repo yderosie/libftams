@@ -6,7 +6,7 @@
 /*   By: yderosie <yderosie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/06 16:35:14 by yderosie          #+#    #+#             */
-/*   Updated: 2015/06/01 18:10:16 by yderosie         ###   ########.fr       */
+/*   Updated: 2015/06/02 18:12:47 by yderosie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ void	*ft_memcpy(void *dst, void const *src, size_t n);
 char	*ft_strdup(char const *s1);
 void	ft_puts(char *s);
 void	ft_cat(int fd);
-char	*ft_memchr(char *s, int c, size_t n);
+char	*ft_memchr(char const *s, int c, size_t n);
 char	*ft_strnew(size_t size);
+void	ft_strclr(char *s);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+char	*ft_strchr(char const *s, int c);
+char	*ft_strcpy(char *dst, char const *src);
+char	*ft_strncpy(char *dst, char const *src, size_t n);
+void	*ft_memalloc(size_t size);
 
 #endif

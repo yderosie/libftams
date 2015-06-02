@@ -3,7 +3,8 @@ section .text
 
 ft_putchar:
 	mov rsi, rdi
-	mov rax, 0x2000004
 	mov rdi, 1
+	mov rdx, 1
+	mov rax, 0x2000004
 	syscall
 	ret
