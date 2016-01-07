@@ -1,24 +1,36 @@
 section .text
 	global ft_cat
 	extern malloc
-	extern ft_puts
 
 ft_cat:
-	enter 0,0
-	mov r9, rdi
-
-.while
-	mov rdi, 4096
+	enter 0, 0
+	mov r12, rdi
+	mov rdi, 4097
 	call malloc
-	mov rsi, rax
-	mov rdi, r9
+	cmp rax, 0
+	je .error
+	mov r14, rax
+
+.while:
+	mov rsi, r14
+	mov rdi, r12
 	mov rax, 0x2000003
 	mov rdx, 4096
 	syscall
-	mov r8, rax
-	mov rdi, rsi
-	call ft_puts
-	cmp r8, 0
-	jne .while
+	jle .end
+	mov r15, rax
+	cmp r15, 0
+	je .end
+	mov rdi, 1
+	mov rdx, r15
+	mov rax, 0x2000004
+	syscall
+	jmp .while
+
+.end:
 	leave
+	ret
+
+.error:
+	mov rax, 0
 	ret

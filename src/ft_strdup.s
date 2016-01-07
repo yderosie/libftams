@@ -12,9 +12,15 @@ ft_strdup:
 	mov r13, rax
 	mov rdi, rax
 	call malloc
+	cmp rax, 0
+	je .error
 	mov rdi, rax
 	mov rsi, r12
 	mov rdx, r13
 	call ft_memcpy
 	leave
+	ret
+
+.error:
+	mov rax, 0
 	ret

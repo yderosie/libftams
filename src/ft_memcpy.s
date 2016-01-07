@@ -5,6 +5,7 @@ ft_memcpy:
 	cmp rdx, 0
 	je .end
 	mov rcx, rdx
+	cld
 	rep movsb
 
 .end:

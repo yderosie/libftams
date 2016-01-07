@@ -9,7 +9,9 @@ ft_strcpy:
 	mov r12, rax
 	mov rcx, r12
 	mov rdi, r13
+	cld
 	rep movsb
+	mov [rdi], byte 0
 	sub rdi, r12
 	mov rax, rdi
 	ret

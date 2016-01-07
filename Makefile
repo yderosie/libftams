@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yderosie <yderosie@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2015/06/11 14:55:02 by yderosie          #+#    #+#              #
+#    Updated: 2015/06/11 14:55:27 by yderosie         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libfts.a
 
 SRCS =	src/ft_bzero.s	\
@@ -15,17 +27,12 @@ SRCS =	src/ft_bzero.s	\
 		src/ft_strdup.s	\
 		src/ft_puts.s	\
 		src/ft_cat.s	\
-		src/ft_memchr.s	\
 		src/ft_strnew.s	\
 		src/ft_strclr.s	\
-		src/ft_putchar.s\
-		src/ft_strchr.s	\
 		src/ft_putstr.s	\
 		src/ft_strcpy.s	\
 		src/ft_strncpy.s\
 		src/ft_memalloc.s\
-
-INCLUDES = include/
 
 OBJS = $(patsubst src/%.s,obj/%.o,$(SRCS))
 
@@ -40,8 +47,6 @@ else
 	NFLAGS += -fmacho64 -DOSX --prefix _ -g
 endif
 
-#CFLAGS += -Wall -Wextra -Werror -Iinclude/
-CFLAGS += -Iinclude/
 
 obj/%.o: src/%.s
 	@$(MKDIR) -p $(dir $@)

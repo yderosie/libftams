@@ -3,7 +3,6 @@ section .text
 
 ft_strcat:
 	mov rax, rdi
-	mov r9, 0
 
 .while:
 	cmp [rdi], byte 0
@@ -14,11 +13,12 @@ ft_strcat:
 .copy:
 	cmp [rsi], byte 0
 	je .end
-	mov r9, [rsi]
-	mov [rdi], r9
+	mov dl, [rsi]
+	mov [rdi], dl
 	inc rdi
 	inc rsi
 	jmp .copy
 
 .end:
+	mov [rdi], byte 0
 	ret
